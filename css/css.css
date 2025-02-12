@@ -68,3 +68,17 @@
             padding: 1rem 0;
             margin-top: 2rem;
         }
+
+        pre {
+            white-space: pre-line; /* Maintains indentation but wraps text */
+            word-wrap: break-word;
+            overflow-x: auto;
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            max-width: 100%;
+            font-size: 14px;
+            font-family: monospace; /* Ensures proper code formatting */
+            line-height: 1.5; /* Improves readability */
+        }
+        
