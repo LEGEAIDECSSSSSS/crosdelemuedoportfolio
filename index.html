@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cybersecurity Portfolio</title>
     <link rel="stylesheet" href="css/css.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" />
+
      
     <script>
         function toggleQuery(id) {
@@ -15,8 +17,8 @@
 </head>
 <body>
     <header>
-        <h1>Cybersecurity Portfolio</h1>
-        <p>Practical Projects and Case Studies in Incident Response and Data Analysis</p>
+        <h1>Emuedo Crosdel’s Cybersecurity Portfolio</h1>
+        <p>Practical Projects & Case Studies in Incident Response, Data Analysis, and Secure Systems</p>
     </header>
 
     <nav>
@@ -275,21 +277,123 @@ WHERE department IN ('Marketing', 'Finance', 'Sales', 'IT');
                     </ul>
                     <p><strong>Next Steps:</strong> To further enhance my skills, I plan to gain more experience with SIEM tools and deepen my knowledge of malware analysis techniques.</p>
                   </div>
-                    
+                  <div class="card">
+                    <h3>Update a File through a Python Algorithm</h3>
+                    <p>
+                      At my organization, access to restricted content is controlled by an allow list stored in "allow_list.txt". I developed a Python algorithm to automate updating this file by removing IP addresses found in a separate remove list.
+                    </p>
+                  
+                    <h4>Project Description</h4>
+                    <p>
+                      The algorithm follows these key steps:
+                    </p>
+                    <ol>
+                      <li>
+                        <strong>Open the File:</strong> Use Python's <code>open()</code> function in a <code>with</code> statement (read mode) to access the file contents.
+                      </li>
+                      <li>
+                        <strong>Read the Contents:</strong> Convert the file's content into a string using the <code>.read()</code> method.
+                      </li>
+                      <li>
+                        <strong>Convert to a List:</strong> Split the string into a list of IP addresses with the <code>.split()</code> method.
+                      </li>
+                      <li>
+                        <strong>Iterate Through the Remove List:</strong> Loop through the remove list and check if each IP exists in the allow list.
+                      </li>
+                      <li>
+                        <strong>Remove Matching IPs:</strong> Remove any IP addresses found in both lists using the <code>.remove()</code> method.
+                      </li>
+                      <li>
+                        <strong>Update the File:</strong> Convert the updated list back to a string with the <code>.join()</code> method and overwrite the original file using <code>open()</code> in write mode.
+                      </li>
+                    </ol>
+                  
+                    <h4>Key Code Snippets</h4>
+                    <p><strong>Opening and Reading the File:</strong></p>
+                    <a href="#" onclick="toggleQuery('pythonSnippet1'); return false;">Read Code Snippet</a>
+                    <pre id="pythonSnippet1" style="display:none;">
+                  import_file = "allow_list.txt"
+                  with open(import_file, "r") as file:
+                      ip_addresses = file.read()
+                    </pre>
+                  
+                    <p><strong>Updating the Allow List:</strong></p>
+                    <a href="#" onclick="toggleQuery('pythonSnippet2'); return false;">Read Code Snippet</a>
+                    <pre id="pythonSnippet2" style="display:none;">
+                  # Convert string to list
+                  ip_addresses = ip_addresses.split()
+                  
+                  # Iterate through the remove list and remove matching IP addresses
+                  for ip in remove_list:
+                      if ip in ip_addresses:
+                          ip_addresses.remove(ip)
+                  
+                  # Convert list back to string and update the file
+                  ip_addresses = "\n".join(ip_addresses)
+                  with open(import_file, "w") as file:
+                      file.write(ip_addresses)
+                    </pre>
+                  
+                    <p>
+                      This Python algorithm automates updating the allow list to ensure that only authorized IP addresses remain, thereby improving content security.
+                    </p>
+                    <p>
+                      <a href="documents/Update-a-file-through-a-Python-algorithm.pdf" target="_blank">view full project documentation</a>
+                    </p>
+                  </div>
+                  <div class="card">
+                    <h3>Fraud Detection Dashboard</h3>
+                    <p>
+                      This project is a comprehensive dashboard that visualizes fraudulent transaction data across various dimensions. Developed using Splunk, it leverages powerful analytics and visualization capabilities to identify trends and patterns in fraudulent activity, helping organizations pinpoint vulnerabilities.
+                    </p>
+                    <h4>Key Features:</h4>
+                    <ul>
+                      <li>Count by Category of Fraudulent Transactions</li>
+                      <li>Analysis of Fraudulent Payments</li>
+                      <li>Visualization of Fraud by Age and Merchant</li>
+                      <li>Detailed Tables and Charts for Transaction Analysis</li>
+                      <li>Trends Over Time (Monthly Fraud Steps)</li>
+                      <li>Gender-Based Fraud Analysis</li>
+                    </ul>
+                    <p>
+                      The dashboard is designed to help stakeholders quickly identify anomalies and make data-driven decisions to mitigate risk.
+                    </p>
+                    <p>
+                      <a href="documents/Fraud Detection Dashboard.pdf" target="_blank">View Full Dashboard Documentation</a>
+                    </p>
+                  </div>
+                          
             </div>
         </section>
         <section id="about" class="section">
-            <h2>About</h2>
-            <p>I am a cybersecurity professional with a focus on incident response and data analysis. This portfolio highlights my practical experience with SQL, Linux, and data visualization to enhance system security.</p>
+          <h2>About Me</h2>
+          <p>
+            Hi, I'm Emuedo Crosdel—a dedicated cybersecurity professional with a passion for incident response, data analysis, and secure systems design. My portfolio showcases hands-on experience with SQL, Linux, Python, and data visualization, all aimed at strengthening system security.
+          </p>
+          <p>
+            I thrive on solving real-world challenges, whether it's refining SQL queries to detect suspicious logins or developing Python algorithms to automate network access updates. I'm committed to continuously learning and enhancing my technical skills to keep up with the evolving landscape of cybersecurity.
+          </p>
+          <p>
+            Through my work, I aim to contribute to building robust and secure systems that protect critical data. I'm excited to share my journey and projects, and I look forward to exploring innovative solutions to complex security challenges.
+          </p>
         </section>
+        
 
-        <section id="contact" class="section">
-            <h2>Contact</h2>
-            <p>If you'd like to collaborate or learn more about my work, feel free to reach out!</p>
-            <ul>
-                <li>Email: <a href="mailto:crosdel16@gmail.com">Crosdel16@gmail.com</a></li>
-                <li>LinkedIn: <a href="#">linkedin.com/in/yourprofile</a></li>
-            </ul>
+            <section id="contact" class="section">
+              <h2>Contact</h2>
+              <p>If you'd like to collaborate or learn more about my work, feel free to reach out!</p>
+              <div class="contact-info">
+                <div class="contact-item">
+                  <i class="fas fa-envelope"></i>
+                  <a href="mailto:crosdel16@gmail.com">crosdel16@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                  <i class="fab fa-linkedin"></i>
+                  <a href="https://www.linkedin.com/in/crosdel-emuedo-486856277" target="_blank">LinkedIn</a>
+                </div>
+              </div>
+            </section>
+            
         </section>
       </div>
     </div>
