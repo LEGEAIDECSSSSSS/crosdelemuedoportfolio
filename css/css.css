@@ -102,3 +102,40 @@
             color: #0077b5; /* LinkedIn blue or adjust as needed */
           }
           
+          /* Mobile Phones (up to 600px) */
+@media only screen and (max-width: 600px) {
+    body {
+      font-size: 14px; /* Reduce overall font size */
+    }
+    .container {
+      padding: 0.5rem;
+      margin: 1rem auto;
+    }
+    nav {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .card {
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+    }
+  }
+  
+  /* Tablets (up to 768px) */
+  @media only screen and (max-width: 768px) {
+    body {
+      font-size: 16px;
+    }
+    .container {
+      padding: 1rem;
+      margin: 1.5rem auto;
+    }
+    nav {
+      flex-direction: row;
+      gap: 0.75rem;
+    }
+    .card {
+      padding: 1rem;
+    }
+  }
+  
