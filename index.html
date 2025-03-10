@@ -362,7 +362,65 @@ WHERE department IN ('Marketing', 'Finance', 'Sales', 'IT');
                       <a href="documents/Fraud Detection Dashboard.pdf" target="_blank">View Full Dashboard Documentation</a>
                     </p>
                   </div>
-                          
+                  <div class="card">
+                    <h3>Penetration Testing Report</h3>
+                    <p>
+                      This report details the results of a penetration test on the "Basic" web challenge from HackThisSite.org. The test uncovered a range of vulnerabilities—from hardcoded passwords and missing password files to command and SSI injections, as well as insecure cookie handling. Below is a summary of the key vulnerabilities and examples of the techniques used.
+                    </p>
+                    <h4>Key Vulnerabilities & Examples:</h4>
+                    <ul>
+                      <li>
+                        <strong>Hardcoded Passwords:</strong> The source code revealed passwords in plain text.
+                        <a href="#" onclick="toggleQuery('snippet1'); return false;">View Example Snippet</a>
+                        <pre id="snippet1" style="display:none;">
+                  Example: 
+                  <!-- In the source code -->
+                  Password: "admin123"
+                        </pre>
+                      </li>
+                      <li>
+                        <strong>Missing Password File:</strong> The absence of a proper password file allowed successful authentication even with an empty password.
+                        <a href="#" onclick="toggleQuery('snippet2'); return false;">View Example Snippet</a>
+                        <pre id="snippet2" style="display:none;">
+                  Example: 
+                  Submitting an empty password field bypassed login validation.
+                        </pre>
+                      </li>
+                      <li>
+                        <strong>Command Injection:</strong> Input fields were exploited to execute arbitrary system commands.
+                        <a href="#" onclick="toggleQuery('snippet3'); return false;">View Example Snippet</a>
+                        <pre id="snippet3" style="display:none;">
+                  Example: 
+                  Input: "7; ls"
+                  Outcome: Executes "ls" command to list directory contents.
+                        </pre>
+                      </li>
+                      <li>
+                        <strong>SSI Injection:</strong> Server Side Include (SSI) vulnerabilities allowed attackers to view sensitive file directories.
+                        <a href="#" onclick="toggleQuery('snippet4'); return false;">View Example Snippet</a>
+                        <pre id="snippet4" style="display:none;">
+                  Example: 
+                  Injection: <!--#exec cmd="ls ../"-->
+                  Outcome: Reveals parent directory structure.
+                        </pre>
+                      </li>
+                      <li>
+                        <strong>Cookie Manipulation:</strong> Insecure cookie handling enabled session hijacking.
+                        <a href="#" onclick="toggleQuery('snippet5'); return false;">View Example Snippet</a>
+                        <pre id="snippet5" style="display:none;">
+                  Example: 
+                  Modifying the "level10_authorized" cookie value from "no" to "yes" bypassed authentication.
+                        </pre>
+                      </li>
+                    </ul>
+                    <p>
+                      For a comprehensive analysis of all vulnerabilities and detailed remediation recommendations, please refer to the full report.
+                    </p>
+                    <p>
+                      <a href="documents/Penetration Testing Report.pdf" target="_blank">View Full Report</a>
+                    </p>
+                  </div>
+                           
             </div>
         </section>
         <section id="about" class="section">
